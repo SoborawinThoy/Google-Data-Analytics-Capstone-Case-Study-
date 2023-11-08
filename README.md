@@ -17,20 +17,20 @@ When a country boasts a strong economy and a well-regulated government, it sugge
 **Process:**
 To start, I imported the dataset into Microsoft Excel and begnin with the cleaning process. Here are the steps into cleaning the dataset:
 1. Make a copy of the data onto another sheet
-Check for duplicates within the data 
-Spelling check
-Format the different year data in the same format:
-Overall Rank
-Country
-Region
-Happiness score
-Economy (GDP per capita)
-Family 
-Health (Life Expectancy)
-Freedom
-Government Corruption
-Generosity 
-Working Set 2017 - 2019 doesn’t have a “Region” column so we use the IF function nested with a VLOOKUP function to get the datasets from the 2015 and 2016 datasets. The IF function is added because 2015 and 2016 don’t have the same countries and if we only use a VLOOKUP function then in some of the columns, it will return “#N/A”
+2. Check for duplicates within the data 
+3. Spelling check
+4. Format the different year data in the same format:
+    a. Overall Rank
+    b. Country
+    c. Region
+    d. Happiness score
+    e. Economy (GDP per capita)
+    f. Family 
+    g. Health (Life Expectancy)
+    h. Freedom
+    i. Government Corruption
+    j. Generosity 
+5. Working Set 2017 - 2019 doesn’t have a “Region” column so we use the IF function nested with a VLOOKUP function to get the datasets from the 2015 and 2016 datasets. The IF function is added because 2015 and 2016 don’t have the same countries and if we only use a VLOOKUP function then in some of the columns, it will return “#N/A”
 
 =IFERROR(VLOOKUP(B2,'Working set 2015 '!$B$2:$C$159,2,FALSE),IFERROR(VLOOKUP(B2,'Working set 2016'!$B$2:$C$158,2,FALSE), "Not Found"))
 The “Not Found” data is corrected and/or fixed to provide a “Region” 
