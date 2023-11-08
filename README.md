@@ -18,7 +18,7 @@ When a country boasts a strong economy and a well-regulated government, it sugge
 
 **Process:**
 
-Excel 
+*Excel*
 
 To start, I imported the dataset into Microsoft Excel and begnin with the cleaning process. Here are the steps into cleaning the dataset:
    1. Make a copy of the data onto another sheet
@@ -53,7 +53,7 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
    12. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country
    13. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
 
-SQL
+*SQL*
 
 I imported the cleaned World Happiness dataset into SQL to create a dashboard focusing on the happiest and least happy countries in the world for the years 2015 to 2019. Initially, my goal was to filter the data to identify countries that met specific criteria, such as high scores in Happiness, Economy, Government Corruption, and Freedom compared to the global averages. To further narrow down the list, I aimed to find countries that consistently met these conditions throughout the entire 2015-2019 period.
 
