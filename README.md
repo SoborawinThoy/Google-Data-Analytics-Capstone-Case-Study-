@@ -37,9 +37,9 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
     - The “Not Found” data is corrected and/or fixed to provide a “Region” 
 
 6. Next, we format all of the number columns from “General” to “Numbers” with a decimal of 3
-Added a column in the beginning (“Year”)
-To combine the data:
-. Data > Get Data (Power Query) > Launch Power Query Editor 
-2. Get data > Select all of the years > Combine > Append queries 
-3. Close & Load 
+7. Added a column in the beginning (“Year”)
+8. To combine the data:
+    - 1. Data > Get Data (Power Query) > Launch Power Query Editor 
+    - 2. Get data > Select all of the years > Combine > Append queries 
+    - 3. Close & Load 
 
