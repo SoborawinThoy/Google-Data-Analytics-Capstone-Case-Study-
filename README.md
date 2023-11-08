@@ -17,6 +17,7 @@ When a country boasts a strong economy and a well-regulated government, it sugge
 
 
 **Process:**
+
 To start, I imported the dataset into Microsoft Excel and begnin with the cleaning process. Here are the steps into cleaning the dataset:
 1. Make a copy of the data onto another sheet
 2. Check for duplicates within the data 
@@ -44,5 +45,13 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
 9. To combine the data:
    -  Data > Get Data (Power Query) > Launch Power Query Editor 
    -  Get data > Select all of the years > Combine > Append queries 
-   -  Close & Load 
+   -  Close & Load
+10. Create a Filter throughout the columns then filter the countries by Overall Ranks, analyze the data and capture any trends or relationship
+11. Create two seperate Pivot tables to get the "Top 10 Happiest countries" and "Top 10 Unhappiest Countries", each tables includes Average of Happiness Score, Average of Economy (GDP per Capita), Average of Government Corruption and Average of Freedom
+12. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country
+13. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
+
+**Share:** 
+
+
 
