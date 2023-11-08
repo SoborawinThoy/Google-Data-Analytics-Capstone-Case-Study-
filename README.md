@@ -20,7 +20,7 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
 2. Check for duplicates within the data 
 3. Spelling check
 4. Format the different year data in the same format:
-    - Overall Rank
+    - a. Overall Rank
     - b. Country
     - c. Region
     - d. Happiness score
