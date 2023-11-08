@@ -18,38 +18,48 @@ When a country boasts a strong economy and a well-regulated government, it sugge
 
 **Process:**
 
+Excel: 
 To start, I imported the dataset into Microsoft Excel and begnin with the cleaning process. Here are the steps into cleaning the dataset:
-1. Make a copy of the data onto another sheet
-2. Check for duplicates within the data 
-3. Spelling check
-4. Format the different year data in the same format:
-   - a. Overall Rank
-   - b. Country
-   - c. Region
-   - d. Happiness score
-   - e. Economy (GDP per capita)
-   - f. Family 
-   - g. Health (Life Expectancy)
-   - h. Freedom
-   - i. Government Corruption
-   - j. Generosity
+   1. Make a copy of the data onto another sheet
+   2. Check for duplicates within the data 
+   3. Spelling check
+   4. Format the different year data in the same format:
+      - a. Overall Rank
+      - b. Country
+      - c. Region
+      - d. Happiness score
+      - e. Economy (GDP per capita)
+      - f. Family 
+      - g. Health (Life Expectancy)
+      - h. Freedom
+      - i. Government Corruption
+      - j. Generosity
 
-5. Working Set 2017 - 2019 doesn’t have a “Region” column so we use the IF function nested with a VLOOKUP function to get the datasets from the 2015 and 2016 datasets. The IF function is added because 2015 and 2016 don’t have the same countries and if we only use a VLOOKUP function then in some of the columns, it will return “#N/A”
+   5. Working Set 2017 - 2019 doesn’t have a “Region” column so we use the IF function nested with a VLOOKUP function to get the datasets from the 2015 and 2016       datasets. The IF function is added because 2015 and 2016 don’t have the same countries and if we only use a VLOOKUP function then in some of the columns, it       will return “#N/A”
 
          =IFERROR(VLOOKUP(B2,'Working set 2015 '!$B$2:$C$159,2,FALSE),IFERROR(VLOOKUP(B2,'Working set 2016'!$B$2:$C$158,2,FALSE), "Not Found"))
    
    - The “Not Found” data is corrected and/or fixed to provide a “Region” 
 
-7. Next, we format all of the number columns from “General” to “Numbers” with a decimal of 3
-8. Added a column in the beginning (“Year”)
-9. To combine the data:
-   -  Data > Get Data (Power Query) > Launch Power Query Editor 
-   -  Get data > Select all of the years > Combine > Append queries 
-   -  Close & Load
-10. Create a Filter throughout the columns then filter the countries by Overall Ranks, analyze the data and capture any trends or relationship
-11. Create two seperate Pivot tables to get the "Top 10 Happiest countries" and "Top 10 Unhappiest Countries", each tables includes Average of Happiness Score, Average of Economy (GDP per Capita), Average of Government Corruption and Average of Freedom
-12. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country
-13. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
+   7. Next, we format all of the number columns from “General” to “Numbers” with a decimal of 3
+   8. Added a column in the beginning (“Year”)
+   9. To combine the data:
+      -  Data > Get Data (Power Query) > Launch Power Query Editor 
+      -  Get data > Select all of the years > Combine > Append queries 
+      -  Close & Load
+   10. Create a Filter throughout the columns then filter the countries by Overall Ranks, analyze the data and capture any trends or relationship
+   11. Create two seperate Pivot tables to get the "Top 10 Happiest countries" and "Top 10 Unhappiest Countries", each tables includes Average of Happiness Score,    Average of Economy (GDP per Capita), Average of Government Corruption and Average of Freedom
+   12. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country
+   13. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
+
+SQL:
+I imported the cleaned World Happiness dataset into SQL to create a dashboard focusing on the happiest and least happy countries in the world for the years 2015 to 2019. Initially, my goal was to filter the data to identify countries that met specific criteria, such as high scores in Happiness, Economy, Government Corruption, and Freedom compared to the global averages. To further narrow down the list, I aimed to find countries that consistently met these conditions throughout the entire 2015-2019 period.
+
+To achieve this, I employed a common table expression (CTE) and joined it with my original query. The resulting table was then exported to Excel for more in-depth analysis. This analysis served as the basis for identifying countries favorable for initiating business ventures.
+Subsequently, I reversed the conditions to pinpoint countries that consistently scored below average in these criteria. This was instrumental in identifying regions where business opportunities might not be as promising.
+
+The data from these two analyses was exported to Excel, allowing for detailed examination and further research into why some countries consistently scored high, while others consistently scored below average. This holistic approach enables data-driven decision-making for business opportunities and risk assessment.
+
 
 **Share:** 
 
