@@ -13,4 +13,32 @@ The dataset is valuable for addressing the question of "what country is best to 
 
 When a country boasts a strong economy and a well-regulated government, it suggests a thriving environment for businesses to flourish. By examining this data, we can potentially uncover business opportunities that might not be immediately apparent or well-explored. In essence, this dataset can shed light on countries that are not only happy but also economically and politically stable, making them attractive prospects for business ventures.
 
+
 **Process:**
+To start, I imported the dataset into Microsoft Excel and begnin with the cleaning process. Here are the steps into cleaning the dataset:
+1. Make a copy of the data onto another sheet
+Check for duplicates within the data 
+Spelling check
+Format the different year data in the same format:
+Overall Rank
+Country
+Region
+Happiness score
+Economy (GDP per capita)
+Family 
+Health (Life Expectancy)
+Freedom
+Government Corruption
+Generosity 
+Working Set 2017 - 2019 doesn’t have a “Region” column so we use the IF function nested with a VLOOKUP function to get the datasets from the 2015 and 2016 datasets. The IF function is added because 2015 and 2016 don’t have the same countries and if we only use a VLOOKUP function then in some of the columns, it will return “#N/A”
+
+=IFERROR(VLOOKUP(B2,'Working set 2015 '!$B$2:$C$159,2,FALSE),IFERROR(VLOOKUP(B2,'Working set 2016'!$B$2:$C$158,2,FALSE), "Not Found"))
+The “Not Found” data is corrected and/or fixed to provide a “Region” 
+
+Next, we format all of the number columns from “General” to “Numbers” with a decimal of 3
+Added a column in the beginning (“Year”)
+To combine the data:
+1. Data > Get Data (Power Query) > Launch Power Query Editor 
+2. Get data > Select all of the years > Combine > Append queries 
+3. Close & Load 
+
