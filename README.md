@@ -39,7 +39,7 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
 6. Next, we format all of the number columns from “General” to “Numbers” with a decimal of 3
 7. Added a column in the beginning (“Year”)
 8. To combine the data:
-    - 1. Data > Get Data (Power Query) > Launch Power Query Editor 
-    - 2. Get data > Select all of the years > Combine > Append queries 
-    - 3. Close & Load 
+    -  Data > Get Data (Power Query) > Launch Power Query Editor 
+    -  Get data > Select all of the years > Combine > Append queries 
+    -  Close & Load 
 
