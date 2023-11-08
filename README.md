@@ -66,25 +66,21 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
 
 -- we will pick that country from there and investigate more on
 
-WITH CountryCounts AS (
-    SELECT Country, COUNT(DISTINCT Year) AS YearCount
-    FROM `World Happiness`.`wh_sql`
-    WHERE Year BETWEEN 2015 and 2019
-    GROUP BY Country
-)
+      WITH CountryCounts AS (
+          SELECT Country, COUNT(DISTINCT Year) AS YearCount
+          FROM `World Happiness`.`wh_sql`
+          WHERE Year BETWEEN 2015 and 2019
+          GROUP BY Country
+      )
 
-SELECT wh.*
-FROM `World Happiness`.`wh_sql` wh
-INNER JOIN CountryCounts cc ON wh.Country = cc.Country
-WHERE HappinessScore > (SELECT avg(HappinessScore) FROM `World Happiness`.`wh_sql`)
-
-    AND Economy > (SELECT avg(Economy) FROM `World Happiness`.`wh_sql`)
-    
-    AND GovernmentCorruption < (SELECT avg(GovernmentCorruption) FROM `World Happiness`.`wh_sql`)
-    
-    AND Freedom > (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
-    
-    AND cc.YearCount = 5;  -- Change 5 to 4 if the data only includes years 2015-2018
+      SELECT wh.*
+      FROM `World Happiness`.`wh_sql` wh
+      INNER JOIN CountryCounts cc ON wh.Country = cc.Country
+      WHERE HappinessScore > (SELECT avg(HappinessScore) FROM `World Happiness`.`wh_sql`)
+          AND Economy > (SELECT avg(Economy) FROM `World Happiness`.`wh_sql`)
+          AND GovernmentCorruption < (SELECT avg(GovernmentCorruption) FROM `World Happiness`.`wh_sql`)
+          AND Freedom > (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
+          AND cc.YearCount = 5;  -- Change 5 to 4 if the data only includes years 2015-2018
 
 
 
