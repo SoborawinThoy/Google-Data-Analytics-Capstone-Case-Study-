@@ -81,7 +81,6 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
           AND GovernmentCorruption < (SELECT avg(GovernmentCorruption) FROM `World Happiness`.`wh_sql`)
           AND Freedom > (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
           AND cc.YearCount = 5;  
-   -- Change 5 to 4 if the data only includes years 2015-2018
           
    -- For this Query, we're narrowing down to find the countries to best avoid due to their scores 
    -- Find the country or countries that show up the most and do further investigation on why that is the reason 
@@ -101,7 +100,6 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
           AND GovernmentCorruption > (SELECT avg(GovernmentCorruption) FROM `World Happiness`.`wh_sql`)
           AND Freedom < (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
           AND cc.YearCount = 5;  
-   -- Change 5 to 4 if the data only includes years 2015-2018
 
 
 
