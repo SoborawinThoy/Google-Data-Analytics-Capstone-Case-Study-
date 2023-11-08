@@ -83,6 +83,7 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
           AND cc.YearCount = 5;  
           
    -- For this Query, we're narrowing down to find the countries to best avoid due to their scores 
+   
    -- Find the country or countries that show up the most and do further investigation on why that is the reason 
 
       WITH CountryCounts AS (
@@ -101,7 +102,7 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
           AND Freedom < (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
           AND cc.YearCount = 5;  
 
-
+<a href="https://www.linkedin.com/in/soborawin-thoy">Click here to View the query table</a>
 
 **Share:** 
 
