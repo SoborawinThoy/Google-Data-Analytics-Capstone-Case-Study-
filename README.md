@@ -77,9 +77,13 @@ SELECT wh.*
 FROM `World Happiness`.`wh_sql` wh
 INNER JOIN CountryCounts cc ON wh.Country = cc.Country
 WHERE HappinessScore > (SELECT avg(HappinessScore) FROM `World Happiness`.`wh_sql`)
+
     AND Economy > (SELECT avg(Economy) FROM `World Happiness`.`wh_sql`)
+    
     AND GovernmentCorruption < (SELECT avg(GovernmentCorruption) FROM `World Happiness`.`wh_sql`)
+    
     AND Freedom > (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
+    
     AND cc.YearCount = 5;  -- Change 5 to 4 if the data only includes years 2015-2018
 
 
