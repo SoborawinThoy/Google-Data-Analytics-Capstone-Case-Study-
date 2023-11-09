@@ -66,6 +66,8 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
    
    -- we will pick that country from there and investigate more on
 
+   -- <a href="Best countries.csv">Click here to View the best query table</a> 
+
       WITH CountryCounts AS (
           SELECT Country, COUNT(DISTINCT Year) AS YearCount
           FROM `World Happiness`.`wh_sql`
@@ -101,8 +103,6 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
           AND GovernmentCorruption > (SELECT avg(GovernmentCorruption) FROM `World Happiness`.`wh_sql`)
           AND Freedom < (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
           AND cc.YearCount = 5;  
-
-<a href="Best countries.csv">Click here to View the best query table</a>
 
 <a href="Worst countries.csv">Click here to View the worst query table</a>
 
