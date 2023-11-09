@@ -66,7 +66,7 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
    
    -- we will pick that country from there and investigate more on
 
-   -- <a href="Best countries.csv">Click here to View the best query table</a> 
+   <a href="Best countries.csv">Click here to View the best query table</a> 
 
       WITH CountryCounts AS (
           SELECT Country, COUNT(DISTINCT Year) AS YearCount
