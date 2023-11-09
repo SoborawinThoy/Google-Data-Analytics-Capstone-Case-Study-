@@ -62,7 +62,7 @@ Subsequently, I reversed the conditions to pinpoint countries that consistently 
 
 The data from these two analyses was exported to Excel, allowing for detailed examination and further research into why some countries consistently scored high, while others consistently scored below average. This holistic approach enables data-driven decision-making for business opportunities and risk assessment.
 
-   -- For this Query, we're narrowing down to find a country that best fits the query and to see which country shows up the most and 
+   -- For this Query, we're narrowing down to find a country that best fits the query and to see which country shows       up the most 
    
    -- we will pick that country from there and investigate more on
 
@@ -87,6 +87,8 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
    -- For this Query, we're narrowing down to find the countries to best avoid due to their scores 
    
    -- Find the country or countries that show up the most and do further investigation on why that is the reason 
+
+   <a href="Worst countries.csv">Click here to View the worst query table</a>
 
       WITH CountryCounts AS (
           SELECT Country, COUNT(DISTINCT Year) AS YearCount
