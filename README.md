@@ -102,7 +102,9 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
           AND Freedom < (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
           AND cc.YearCount = 5;  
 
-<a href="https://www.linkedin.com/in/soborawin-thoy">Click here to View the query table</a>
+<a href="Best countries.csv">Click here to View the best query table</a>
+<a href="Worst countries.csv">Click here to View the best query table</a>
+
 
 **Share:** 
 
