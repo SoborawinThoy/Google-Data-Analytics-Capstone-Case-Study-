@@ -106,8 +106,6 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
           AND Freedom < (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
           AND cc.YearCount = 5;  
 
-<a href="Worst countries.csv">Click here to View the worst query table</a>
-
 
 **Share:** 
 
