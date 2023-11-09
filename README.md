@@ -103,7 +103,8 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
           AND cc.YearCount = 5;  
 
 <a href="Best countries.csv">Click here to View the best query table</a>
-<a href="Worst countries.csv">Click here to View the best query table</a>
+
+<a href="Worst countries.csv">Click here to View the worst query table</a>
 
 
 **Share:** 
