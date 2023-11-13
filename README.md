@@ -48,14 +48,25 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
       -  Data > Get Data (Power Query) > Launch Power Query Editor 
       -  Get data > Select all of the years > Combine > Append queries 
       -  Close & Load
-   10. Create a Filter throughout the columns then filter the countries by Overall Ranks, analyze the data and capture any trends or relationship
-   11. Create two seperate Pivot tables to get the "Top 10 Happiest countries" and "Top 10 Unhappiest Countries", each tables includes Average of Happiness Score,    Average of Economy (GDP per Capita), Average of Government Corruption and Average of Freedom
-   12. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country Corruption"
+   10. Create a Filter throughout the columns then filter the countries by Overall Ranks, analyze the data and capture any trends or relationship:
+       - Key trends:
+          - Many of the countries that were ranked the lowest have a low Economy (GDP per Capita) score but their happiness score isn’t too low either
+          - When it comes to family support, it seems like that plays a big factor in the happiness score as many of the top countries contain a high family support score
+          - When it comes to Health (life expectancy) many of the lower countries have a low health score and these countries are within Sub-Saharan Africa, which makes a lot of sense knowing what the limited resources that the country has for basic nutrition and medicines
+          - For the freedom score, Greece from 2017 -2019 has been in the bottom 10
+               - Iran scored a 0.00 score in 2015 because the prior year, [“Repressive elements within the security and intelligence forces and the judiciary retained wide powers and continued to be the main perpetrators of rights abuses.”](https://www.hrw.org/world-report/2015/country-chapters/iran) but the year after that, Iran ranking jumped, and was no longer in the bottom 10.
+               - Sudan in 2016, scored a 0.00, due to violence outbreaks
+               - Angola fell to the bottom in 2018 because [a new president was elected](https://www.hrw.org/world-report/2018/country-chapters/angola) limiting their freedom
+         - When it comes to Government corruption, the trend to be seen is that many of the bottom 10 countries are located in Central and Eastern Europe region
+         - When it comes to the Generosity score, there isn’t a trend or a correlation seen within the data, this would require a deeper look into the country itself
+
+
+   12. Create two seperate Pivot tables to get the "Top 10 Happiest countries" and "Top 10 Unhappiest Countries", each tables includes Average of Happiness Score, Average of Economy (GDP per Capita), Average of Government Corruption and Average of Freedom
+   13. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country Corruption"
 
  <a href="Capstone Dashboard.xlsx">Click here to View the Excel Dashboard</a> 
 
-      
-   13. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
+   14. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
 
 *SQL*
 
