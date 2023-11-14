@@ -123,5 +123,26 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
 
 **Share:** 
 
+1. Were you able to answer the business question?
+
+   Yes! Through the insightful analysis of data, coupled with the powerful capabilities of programs like Excel and SQL, I not only approached but also came significantly closer to unraveling the intricacies of the business question!
+
+2. Here is what I found out through the query table that was created;
+
+   The countries that best fit to do business with were:
+    - Panama
+    - Poland
+    - Solvenia
+    - Thailand
+    - Trinidad and Tobago
+  
+   The countries that least best to do business with were:
+    - Georgia
+    - Syria
+  
+3. With my findings, I took a deeper dive into researching about the countries and finding reasons to what causes these these finding and the results is contained inside the powerpoint:
+  
+    <a href="Worst countries.csv">Click here to View the PowerPoint</a>
+
 
 
