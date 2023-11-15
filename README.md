@@ -1,13 +1,13 @@
 # Google-Data-Analytics-Capstone-Case-Study-
 
-**Act:**
+## Act:
 
 For my capstone project as part of the Google Data Analytics Certificate, I will analyze the World Happiness Report dataset, sourced from Kaggle (available at https://www.kaggle.com/datasets/unsdsn/world-happiness). This dataset not only provides happiness scores for various countries but also includes their GDP, Freedom, and Corruption scores. My aim is to identify the happiest country and assess its suitability for business operations.
 
 I will utilize a combination of tools, including Microsoft Excel, SQL, and Microsoft PowerPoint, throughout this project. The project's stakeholders will encompass government organizations and family members. The intended audience for my findings comprises citizens and prospective global business ventures looking to expand their operations.
 
 
-**Prepare:**
+## Prepare:
 
 As mentioned previously, the dataset is sourced from Kaggle, which is generally considered a credible platform for data sets. However, it's important to acknowledge potential bias within the dataset due to its origin from the Gallup World Poll. To verify the dataset's integrity and assess the author's credibility, it's essential to delve deeper into the context provided on the Kaggle page and explore any information about the data source and collection methodology.
 
@@ -16,9 +16,9 @@ The dataset is valuable for addressing the question of "what country is best to 
 When a country boasts a strong economy and a well-regulated government, it suggests a thriving environment for businesses to flourish. By examining this data, we can potentially uncover business opportunities that might not be immediately apparent or well-explored. In essence, this dataset can shed light on countries that are not only happy but also economically and politically stable, making them attractive prospects for business ventures.
 
 
-**Process:**
+## PROCESS:
 
-*Excel*
+#### Excel
 
 To start, I imported the dataset into Microsoft Excel and begnin with the cleaning process. Here are the steps into cleaning the dataset:
    1. Make a copy of the data onto another sheet
@@ -42,13 +42,13 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
    
    - The “Not Found” data is corrected and/or fixed to provide a “Region” 
 
-   7. Next, we format all of the number columns from “General” to “Numbers” with a decimal of 3
-   8. Added a column in the beginning (“Year”)
-   9. To combine the data:
+   6. Next, we format all of the number columns from “General” to “Numbers” with a decimal of 3
+   7. Added a column in the beginning (“Year”)
+   8. To combine the data:
       -  Data > Get Data (Power Query) > Launch Power Query Editor 
       -  Get data > Select all of the years > Combine > Append queries 
       -  Close & Load
-   10. Create a Filter throughout the columns then filter the countries by Overall Ranks, analyze the data and capture any trends or relationship:
+   9. Create a Filter throughout the columns then filter the countries by Overall Ranks, analyze the data and capture any trends or relationship:
        - Key trends:
           - Many of the countries that were ranked the lowest have a low Economy (GDP per Capita) score but their happiness score isn’t too low either
           - When it comes to family support, it seems like that plays a big factor in the happiness score as many of the top countries contain a high family support score
@@ -61,14 +61,14 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
          - When it comes to the Generosity score, there isn’t a trend or a correlation seen within the data, this would require a deeper look into the country itself
 
 
-   12. Create two seperate Pivot tables to get the "Top 10 Happiest countries" and "Top 10 Unhappiest Countries", each tables includes Average of Happiness Score, Average of Economy (GDP per Capita), Average of Government Corruption and Average of Freedom
-   13. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country Corruption"
+   10. Create two seperate Pivot tables to get the "Top 10 Happiest countries" and "Top 10 Unhappiest Countries", each tables includes Average of Happiness Score, Average of Economy (GDP per Capita), Average of Government Corruption and Average of Freedom
+   11. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country Corruption"
 
- <a href="Capstone Dashboard.xlsx">Click here to View the Excel Dashboard</a> 
+   <a href="Capstone Dashboard.xlsx">Click here to View the Excel Dashboard</a> 
 
-   14. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
+   12. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
 
-*SQL*
+#### SQL
 
 I imported the cleaned World Happiness dataset into SQL to create a dashboard focusing on the happiest and least happy countries in the world for the years 2015 to 2019. Initially, my goal was to filter the data to identify countries that met specific criteria, such as high scores in Happiness, Economy, Government Corruption, and Freedom compared to the global averages. To further narrow down the list, I aimed to find countries that consistently met these conditions throughout the entire 2015-2019 period.
 
@@ -121,11 +121,11 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
           AND Freedom < (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
           AND cc.YearCount = 5;  
 
-**Share:** 
+## SHARE: 
 
 1. Were you able to answer the business question?
 
-   Yes! Through the insightful analysis of data, coupled with the powerful capabilities of programs like Excel and SQL, I not only approached but also came significantly closer to unraveling the intricacies of the business question!
+I successfully addressed a substantial portion of my inquiry. By conducting insightful data analysis and harnessing the robust capabilities of tools such as Excel and SQL, I not only approached the complexities of the business question but also made considerable strides in unraveling its intricacies. This strategic application of analytical methods not only deepened my understanding but also brought me significantly closer to a comprehensive solution.
 
 2. Here is what I found out through the query table that was created;
 
@@ -141,8 +141,16 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
     - Syria
   
 3. With my findings, I took a deeper dive into researching about the countries and finding reasons to what causes these these finding and the results is contained inside the powerpoint:
+
+      >DISCLAIMER: The presentation provides a concise overview of various countries, offering a snapshot of key information without 
+      delving into extensive research details. While the focus was on conducting quick research for each country, the intention was to 
+      provide a valuable resource for those interested in exploring business opportunities. By presenting easily accessible 
+      information, the goal is to enable individuals to initiate their preliminary research on Google, empowering them to gather 
+      essential insights before making informed decisions about potential business ventures.
   
-    <a href="Worst countries.csv">Click here to View the PowerPoint</a>
+   <a href="Worst countries.csv">Click here to View the PowerPoint</a>
+
+## ACT:
 
 
 
