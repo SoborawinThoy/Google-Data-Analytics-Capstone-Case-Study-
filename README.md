@@ -38,7 +38,7 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
 
    5. Working Set 2017 - 2019 doesn’t have a “Region” column so we use the IF function nested with a VLOOKUP function to get the datasets from the 2015 and 2016       datasets. The IF function is added because 2015 and 2016 don’t have the same countries and if we only use a VLOOKUP function then in some of the columns, it       will return “#N/A”
 
-            =IFERROR(VLOOKUP(B2,'Working set 2015 '!$B$2:$C$159,2,FALSE),IFERROR(VLOOKUP(B2,'Working set             2016'!$B$2:$C$158,2,FALSE), "Not Found"))
+            =IFERROR(VLOOKUP(B2,'Working set 2015 '!$B$2:$C$159,2,FALSE),IFERROR(VLOOKUP(B2,'Working set 2016'!$B$2:$C$158,2,FALSE), "Not Found"))
    
    - The “Not Found” data is corrected and/or fixed to provide a “Region” 
 
@@ -64,40 +64,45 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
    10. Create two seperate Pivot tables to get the "Top 10 Happiest countries" and "Top 10 Unhappiest Countries", each tables includes Average of Happiness Score, Average of Economy (GDP per Capita), Average of Government Corruption and Average of Freedom
    11. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country Corruption"
 
-   <a href="Capstone Dashboard.xlsx">Click here to View the Excel Dashboard</a> 
+       <a href="Capstone Dashboard.xlsx">Click here to View the Excel Dashboard</a>   
 
    12. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
 
-#### SQL
+  #### SQL
 
-I imported the cleaned World Happiness dataset into SQL to create a dashboard focusing on the happiest and least happy countries in the world for the years 2015 to 2019. Initially, my goal was to filter the data to identify countries that met specific criteria, such as high scores in Happiness, Economy, Government Corruption, and Freedom compared to the global averages. To further narrow down the list, I aimed to find countries that consistently met these conditions throughout the entire 2015-2019 period.
+   I imported the cleaned World Happiness dataset into SQL to create a dashboard focusing on the happiest and least happy countries in the world for the years 2015 to 2019. Initially, my goal was to 
+   filter the data to identify countries that met specific criteria, such as high scores in Happiness, Economy, Government Corruption, and Freedom compared to the global averages. To further narrow 
+   down the list, I aimed to find countries that consistently met these conditions throughout the entire 2015-2019 period.
 
-To achieve this, I employed a common table expression (CTE) and joined it with my original query. The resulting table was then exported to Excel for more in-depth analysis. This analysis served as the basis for identifying countries favorable for initiating business ventures.
-Subsequently, I reversed the conditions to pinpoint countries that consistently scored below average in these criteria. This was instrumental in identifying regions where business opportunities might not be as promising.
+   To achieve this, I employed a common table expression (CTE) and joined it with my original query. The resulting table was then exported to Excel for more in-depth analysis. This analysis served as 
+   the basis for identifying countries favorable for initiating business ventures.
+   Subsequently, I reversed the conditions to pinpoint countries that consistently scored below average in these criteria. This was instrumental in identifying regions where business opportunities 
+   might not be as promising.
 
-The data from these two analyses was exported to Excel, allowing for detailed examination and further research into why some countries consistently scored high, while others consistently scored below average. This holistic approach enables data-driven decision-making for business opportunities and risk assessment.
+   The data from these two analyses was exported to Excel, allowing for detailed examination and further research into why some countries consistently scored high, while others consistently scored 
+   below average. This holistic approach enables data-driven decision-making for business opportunities and risk assessment.
 
-   -- For this Query, we're narrowing down to find a country that best fits the query and to see which country shows       up the most 
+   -- For this Query, we're narrowing down to find a country that best fits the query and to see which country shows up the most 
    
    -- we will pick that country from there and investigate more on
 
    <a href="Best countries.csv">Click here to View the query table</a> 
 
-      WITH CountryCounts AS (
-          SELECT Country, COUNT(DISTINCT Year) AS YearCount
-          FROM `World Happiness`.`wh_sql`
-          WHERE Year BETWEEN 2015 and 2019
-          GROUP BY Country
-      )
-
-      SELECT wh.*
-      FROM `World Happiness`.`wh_sql` wh
-      INNER JOIN CountryCounts cc ON wh.Country = cc.Country
-      WHERE HappinessScore > (SELECT avg(HappinessScore) FROM `World Happiness`.`wh_sql`)
-          AND Economy > (SELECT avg(Economy) FROM `World Happiness`.`wh_sql`)
-          AND GovernmentCorruption < (SELECT avg(GovernmentCorruption) FROM `World Happiness`.`wh_sql`)
-          AND Freedom > (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
-          AND cc.YearCount = 5;  
+            WITH CountryCounts AS (
+                SELECT Country, COUNT(DISTINCT Year) AS YearCount
+                FROM `World Happiness`.`wh_sql`
+                WHERE Year BETWEEN 2015 and 2019
+                GROUP BY Country
+            )
+         
+            SELECT wh.*
+            FROM `World Happiness`.`wh_sql` wh
+            INNER JOIN CountryCounts cc ON wh.Country = cc.Country
+            WHERE HappinessScore > (SELECT avg(HappinessScore) FROM `World Happiness`.`wh_sql`)
+                AND Economy > (SELECT avg(Economy) FROM `World Happiness`.`wh_sql`)
+                AND GovernmentCorruption < (SELECT avg(GovernmentCorruption) FROM `World Happiness`.`wh_sql`)
+                AND Freedom > (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
+                AND cc.YearCount = 5;  
           
    -- For this Query, we're narrowing down to find the countries to best avoid due to their scores 
    
@@ -105,31 +110,34 @@ The data from these two analyses was exported to Excel, allowing for detailed ex
 
    <a href="Worst countries.csv">Click here to View the query table</a>
 
-      WITH CountryCounts AS (
-          SELECT Country, COUNT(DISTINCT Year) AS YearCount
-          FROM `World Happiness`.`wh_sql`
-          WHERE Year BETWEEN 2015 and 2019
-          GROUP BY Country
-      )
-
-      SELECT wh.*
-      FROM `World Happiness`.`wh_sql` wh
-      INNER JOIN CountryCounts cc ON wh.Country = cc.Country
-      WHERE HappinessScore < (SELECT avg(HappinessScore) FROM `World Happiness`.`wh_sql`)
-          AND Economy < (SELECT avg(Economy) FROM `World Happiness`.`wh_sql`)
-          AND GovernmentCorruption > (SELECT avg(GovernmentCorruption) FROM `World Happiness`.`wh_sql`)
-          AND Freedom < (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
-          AND cc.YearCount = 5;  
+               WITH CountryCounts AS (
+                   SELECT Country, COUNT(DISTINCT Year) AS YearCount
+                   FROM `World Happiness`.`wh_sql`
+                   WHERE Year BETWEEN 2015 and 2019
+                   GROUP BY Country
+               )
+         
+               SELECT wh.*
+               FROM `World Happiness`.`wh_sql` wh
+               INNER JOIN CountryCounts cc ON wh.Country = cc.Country
+               WHERE HappinessScore < (SELECT avg(HappinessScore) FROM `World Happiness`.`wh_sql`)
+                   AND Economy < (SELECT avg(Economy) FROM `World Happiness`.`wh_sql`)
+                   AND GovernmentCorruption > (SELECT avg(GovernmentCorruption) FROM `World Happiness`.`wh_sql`)
+                   AND Freedom < (SELECT avg(Freedom) FROM `World Happiness`.`wh_sql`)
+                   AND cc.YearCount = 5;  
 
 ## SHARE: 
 
-1. Were you able to answer the business question?
+**1. Were you able to answer the business question?**
 
-I successfully addressed a substantial portion of my inquiry. By conducting insightful data analysis and harnessing the robust capabilities of tools such as Excel and SQL, I not only approached the complexities of the business question but also made considerable strides in unraveling its intricacies. This strategic application of analytical methods not only deepened my understanding but also brought me significantly closer to a comprehensive solution.
+   I successfully addressed a substantial portion of my inquiry. By conducting insightful data analysis and harnessing the robust capabilities of tools such as Excel and SQL, I not only approached the 
+   complexities of the business question but also made considerable strides in unraveling its intricacies. This strategic application of analytical methods not only deepened my understanding but also 
+   brought me significantly closer to a comprehensive solution.
 
-2. Here is what I found out through the query table that was created;
+**2. Here is what I found out through the query table that was created;**
 
    The countries that best fit to do business with were:
+   
     - Panama
     - Poland
     - Solvenia
@@ -137,16 +145,17 @@ I successfully addressed a substantial portion of my inquiry. By conducting insi
     - Trinidad and Tobago
   
    The countries that least best to do business with were:
+   
     - Georgia
     - Syria
   
-3. With my findings, I took a deeper dive into researching about the countries and finding reasons to what causes these these finding and the results is contained inside the powerpoint:
+**3. With my findings, I took a deeper dive into researching about the countries and finding reasons to what causes these these finding and the results is contained inside the powerpoint:**
 
-      >DISCLAIMER: The presentation provides a concise overview of various countries, offering a snapshot of key information without 
-      delving into extensive research details. While the focus was on conducting quick research for each country, the intention was to 
-      provide a valuable resource for those interested in exploring business opportunities. By presenting easily accessible 
-      information, the goal is to enable individuals to initiate their preliminary research on Google, empowering them to gather 
-      essential insights before making informed decisions about potential business ventures.
+   > DISCLAIMER: The presentation provides a concise overview of various countries, offering a snapshot of key information without 
+   delving into extensive research details. While the focus was on conducting quick research for each country, the intention was to 
+   provide a valuable resource for those interested in exploring business opportunities. By presenting easily accessible 
+   information, the goal is to enable individuals to initiate their preliminary research on Google, empowering them to gather 
+   essential insights before making informed decisions about potential business ventures.
   
    <a href="Worst countries.csv">Click here to View the PowerPoint</a>
 
