@@ -64,7 +64,7 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
    10. Create two seperate Pivot tables to get the "Top 10 Happiest countries" and "Top 10 Unhappiest Countries", each tables includes Average of Happiness Score, Average of Economy (GDP per Capita), Average of Government Corruption and Average of Freedom
    11. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country Corruption"
 
-       <a href="Capstone Dashboard.xlsx">Click here to View the Excel Dashboard</a>   
+       <a href="Capstone Project Dashboard.xlsx">Click here to View the Excel Dashboard</a>   
 
    12. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
 
