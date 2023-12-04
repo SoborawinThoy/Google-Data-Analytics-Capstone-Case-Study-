@@ -157,7 +157,7 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
    information, the goal is to enable individuals to initiate their preliminary research on Google, empowering them to gather 
    essential insights before making informed decisions about potential business ventures.
   
-   <a href="Worst countries.csv">Click here to View the PowerPoint</a>
+   <a href="Conclusion.pptx">Click here to View the PowerPoint</a>
 
 ## ACT:
 
@@ -173,7 +173,7 @@ The insights into Thailand's economic landscape position it as an attractive des
 
 In response to the enlightening findings, stakeholders are poised to undertake a strategic and meticulous approach to enter or expand their operations in the Thai market. This comprehensive plan involves thorough market research, aiming to understand the nuances of industry dynamics, consumer behavior, and regulatory intricacies specific to Thailand. The strategy also encompasses the exploration of strategic partnerships with local entities, fostering collaborations to establish a robust presence and capitalize on existing networks. Legal compliance, supply chain optimization, and the integration of innovation align with the country's strategic focus. Further, tailored global trade strategies, targeted engagement with Thailand's significant tourism sector, and proactive involvement with government bodies and industry associations are integral components. Adapting to the favorable business climate and formulating long-term growth strategies that echo Thailand's overarching initiatives complete this strategic roadmap. By meticulously implementing these steps, stakeholders position themselves to navigate and seize opportunities within Thailand's vibrant economic landscape, ensuring a successful and sustainable market entry or expansion.
 
-### ***4. Is there additional data you could use to expand on your findings?***
+### **4. Is there additional data you could use to expand on your findings?***
 
 In shaping the trajectory of my project and harnessing the data, it appears that the existing dataset adequately aligns with the project's goals. My primary objective was to leverage the simplicity of happiness report data, utilizing happiness ratings as a metric to discern the most favorable countries for business endeavors based on their happiness levels. While contemplating potential supplementary data, considerations leaned toward factors such as crime rates and unemployment rates, which inherently fall within the economic realm. However, these facets are comprehensively covered under the broader economic section, providing a holistic overview. The meticulous curation of happiness data, coupled with the prospect of incorporating economic indicators, ensures a robust foundation for the project's analytical depth and strategic insights.
 
