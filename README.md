@@ -2,18 +2,18 @@
 
 ## Act:
 
-For my capstone project as part of the Google Data Analytics Certificate, I will analyze the World Happiness Report dataset, sourced from Kaggle (available at https://www.kaggle.com/datasets/unsdsn/world-happiness). This dataset not only provides happiness scores for various countries but also includes their GDP, Freedom, and Corruption scores. My aim is to identify the happiest country and assess its suitability for business operations.
+For my capstone project as part of the Google Data Analytics Certificate, I will analyze the World Happiness Report dataset, sourced from Kaggle (available at https://www.kaggle.com/datasets/unsdsn/world-happiness). This dataset not only provides happiness scores for various countries but also includes their GDP, Freedom, and Corruption scores. I aim to identify the happiest country and assess its suitability for business operations.
 
 I will utilize a combination of tools, including Microsoft Excel, SQL, and Microsoft PowerPoint, throughout this project. The project's stakeholders will encompass government organizations and family members. The intended audience for my findings comprises citizens and prospective global business ventures looking to expand their operations.
 
 
 ## Prepare:
 
-As mentioned previously, the dataset is sourced from Kaggle, which is generally considered a credible platform for data sets. However, it's important to acknowledge potential bias within the dataset due to its origin from the Gallup World Poll. To verify the dataset's integrity and assess the author's credibility, it's essential to delve deeper into the context provided on the Kaggle page and explore any information about the data source and collection methodology.
+As mentioned earlier, the dataset is sourced from Kaggle, generally considered a credible platform for datasets. However, it's important to acknowledge potential bias within the dataset due to its origin from the Gallup World Poll. To verify the dataset's integrity and assess the author's credibility, it's essential to delve deeper into the context provided on the Kaggle page and explore any information about the data source and collection methodology.
 
-The dataset is valuable for addressing the question of "what country is best to do business with?" because it contains several key indicators. I believe that high happiness scores in a country are often associated with a robust economy and effective governance. Therefore, these indicators can be indicative of the potential for business opportunities in those countries.
+The dataset is valuable for addressing the question of "what country is best to do business with?" because it contains several key indicators. I believe that high happiness scores in a country are often associated with a robust economy and effective governance. Therefore, these indicators can indicate the potential for business opportunities in those countries.
 
-When a country boasts a strong economy and a well-regulated government, it suggests a thriving environment for businesses to flourish. By examining this data, we can potentially uncover business opportunities that might not be immediately apparent or well-explored. In essence, this dataset can shed light on countries that are not only happy but also economically and politically stable, making them attractive prospects for business ventures.
+When a country boasts a strong economy and well-regulated government, it suggests a thriving environment for businesses to flourish. By examining this data, we can potentially uncover business opportunities that might not be immediately apparent or well-explored. In essence, this dataset can shed light on countries that are not only happy but also economically and politically stable, making them attractive prospects for business ventures.
 
 
 ## PROCESS:
@@ -36,7 +36,7 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
       - i. Government Corruption
       - j. Generosity
 
-   5. Working Set 2017 - 2019 doesn’t have a “Region” column so we use the IF function nested with a VLOOKUP function to get the datasets from the 2015 and 2016       datasets. The IF function is added because 2015 and 2016 don’t have the same countries and if we only use a VLOOKUP function then in some of the columns, it       will return “#N/A”
+   5. Working Set 2017 - 2019 doesn’t have a “Region” column so we use the IF function nested with a VLOOKUP function to get the datasets from the 2015 and 2016 datasets. The IF function is added because 2015 and 2016 don’t have the same countries and if we only use a VLOOKUP function then in some of the columns, it       will return “#N/A”
 
             =IFERROR(VLOOKUP(B2,'Working set 2015 '!$B$2:$C$159,2,FALSE),IFERROR(VLOOKUP(B2,'Working set 2016'!$B$2:$C$158,2,FALSE), "Not Found"))
    
@@ -48,39 +48,36 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
       -  Data > Get Data (Power Query) > Launch Power Query Editor 
       -  Get data > Select all of the years > Combine > Append queries 
       -  Close & Load
-   9. Create a Filter throughout the columns then filter the countries by Overall Ranks, analyze the data and capture any trends or relationship:
+   9. Created a Filter throughout the columns then sort the countries by Overall Ranks from lowest ranked country to highest ranked country, analyze the data and capture any trends or relationship:
+
+      <a href="Capstone Project Dashboard.xlsx">Click here to View the Excel</a>
+      
        - Key trends:
-          - Many of the countries that were ranked the lowest have a low Economy (GDP per Capita) score but their happiness score isn’t too low either
-          - When it comes to family support, it seems like that plays a big factor in the happiness score as many of the top countries contain a high family support score
-          - When it comes to Health (life expectancy) many of the lower countries have a low health score and these countries are within Sub-Saharan Africa, which makes a lot of sense knowing what the limited resources that the country has for basic nutrition and medicines
+          - Many of the countries ranked the lowest exhibit a low Economy (GDP per Capita) score, yet their happiness score remains relatively higher.
+          - Regarding family support, it appears to be a significant factor influencing the happiness score, as many top-ranked countries demonstrate a high family support score. 
+          - In terms of Health (life expectancy), lower-ranked countries often have a low health score, particularly those situated in Sub-Saharan Africa. This observation aligns with the understanding of limited resources in these countries, affecting basic nutrition and access to medicines.
           - For the freedom score, Greece from 2017 -2019 has been in the bottom 10
                - Iran scored a 0.00 score in 2015 because the prior year, [“Repressive elements within the security and intelligence forces and the judiciary retained wide powers and continued to be the main perpetrators of rights abuses.”](https://www.hrw.org/world-report/2015/country-chapters/iran) but the year after that, Iran ranking jumped, and was no longer in the bottom 10.
                - Sudan in 2016, scored a 0.00, due to violence outbreaks
                - Angola fell to the bottom in 2018 because [a new president was elected](https://www.hrw.org/world-report/2018/country-chapters/angola) limiting their freedom
-         - When it comes to Government corruption, the trend to be seen is that many of the bottom 10 countries are located in Central and Eastern Europe region
-         - When it comes to the Generosity score, there isn’t a trend or a correlation seen within the data, this would require a deeper look into the country itself
+         - Concerning Government corruption, a noticeable trend is observed, with many of the bottom 10 countries located in the Central and Eastern Europe region.
+         - On the other hand, regarding the Generosity score, no apparent trend or correlation is evident within the data. Further investigation into each country is necessary to understand the nuances influencing their Generosity score.
 
 
-   10. Create two seperate Pivot tables to get the "Top 10 Happiest countries" and "Top 10 Unhappiest Countries", each tables includes Average of Happiness Score, Average of Economy (GDP per Capita), Average of Government Corruption and Average of Freedom
-   11. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country Corruption"
+   11. Two seperate Pivot tables was created to get the "Top 10 Happiest countries" and "Top 10 Unhappiest Countries", each tables includes Average of Happiness Score, Average of Economy (GDP per Capita), Average of Government Corruption and Average of Freedom
+   12. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country Corruption"
 
        <a href="Capstone Project Dashboard.xlsx">Click here to View the Excel Dashboard</a>   
 
-   12. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
+   13. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
 
   #### SQL
 
-   I imported the cleaned World Happiness dataset into SQL to create a dashboard focusing on the happiest and least happy countries in the world for the years 2015 to 2019. Initially, my goal was to 
-   filter the data to identify countries that met specific criteria, such as high scores in Happiness, Economy, Government Corruption, and Freedom compared to the global averages. To further narrow 
-   down the list, I aimed to find countries that consistently met these conditions throughout the entire 2015-2019 period.
+I imported the cleaned World Happiness dataset into SQL with the objective of creating a dashboard that focuses on the happiest and least happy countries worldwide from 2015 to 2019. Initially, my goal was to filter the data and identify countries meeting specific criteria, including high scores in Happiness, Economy, Government Corruption, and Freedom compared to global averages. To further refine the list, I aimed to find countries consistently meeting these conditions throughout the entire 2015-2019 period.
 
-   To achieve this, I employed a common table expression (CTE) and joined it with my original query. The resulting table was then exported to Excel for more in-depth analysis. This analysis served as 
-   the basis for identifying countries favorable for initiating business ventures.
-   Subsequently, I reversed the conditions to pinpoint countries that consistently scored below average in these criteria. This was instrumental in identifying regions where business opportunities 
-   might not be as promising.
+To achieve this, I utilized a common table expression (CTE) and integrated it with my original query. The resulting table was then exported to Excel for more detailed analysis. This analysis served as the foundation for identifying countries conducive to initiating business ventures. Subsequently, I reversed the conditions to pinpoint countries consistently scoring below average in these criteria. This process was pivotal in identifying regions where business opportunities might not be as promising.
 
-   The data from these two analyses was exported to Excel, allowing for detailed examination and further research into why some countries consistently scored high, while others consistently scored 
-   below average. This holistic approach enables data-driven decision-making for business opportunities and risk assessment.
+The data resulting from these two analyses was exported to Excel, facilitating a comprehensive examination and further research into the reasons behind consistent high and below-average scores for different countries. This holistic approach provides a foundation for data-driven decision-making in assessing business opportunities and potential risks.
 
    -- For this Query, we're narrowing down to find a country that best fits the query and to see which country shows up the most 
    
@@ -167,7 +164,7 @@ Based on my analysis and research, Thailand stands out as the best country for b
 
 ### **2. How could your team and business apply your insights?**
 
-The insights into Thailand's economic landscape position it as an attractive destination for potential business expansion or collaboration. As the second-largest economy in ASEAN, Thailand provides a stable and dynamic economic environment, supported by a substantial gross domestic product (GDP) of $529 billion and consistent annual growth. The country's strategic location and ongoing infrastructure development, notably through initiatives like the Eastern Economic Corridor (EEC) Act, enhance its overall appeal. Thailand's commitment to innovation is evident in its focus on diverse industries such as next-generation cars, smart electronics, and digital technologies. For businesses exploring global trade opportunities, Thailand's thriving export-dependent economy, with key markets like the United States and China, offers a promising avenue. The tourism sector, contributing around 12% of GDP in 2018, adds an additional dimension to Thailand's economic strength. With a favorable business climate, a diverse export portfolio, and strategic growth initiatives, Thailand emerges as a vibrant and promising destination for potential business expansion or collaboration.
+In light of my comprehensive analysis, it is evident that Thailand presents a highly promising opportunity for business expansion, offering unique prospects for both my team and other businesses. To effectively apply these insights, my team can strategically explore diverse avenues within Thailand's dynamic economic landscape. The emphasis on advancing industries like cutting-edge automotive solutions, intelligent electronics, and digital innovations provides an excellent opening for collaboration and investment in these progressive sectors. Specifically, considering strategic market entry into Thailand's export-dependent economy and targeting key markets through partnerships or establishing local offices aligns with my growth objectives. Additionally, exploring opportunities in the tourism sector, which contributed significantly to Thailand's GDP, could be an avenue for ventures related to hospitality, travel services, or experience-based industries. Leveraging Thailand's strategic location and ongoing infrastructure development, my team can optimize supply chains by setting up regional hubs or distribution centers. Furthermore, fostering innovation partnerships with local research and development centers aligns with both my team's strengths and Thailand's commitment to innovation. In essence, tailoring strategies to align with my team's strengths and growth objectives within Thailand's economic landscape offers a strategic roadmap for expansion and success.
 
 ### **3. What next steps would you or your stakeholders take based on your findings?**
 
@@ -176,11 +173,3 @@ In response to the enlightening findings, stakeholders are poised to undertake a
 ### **4. Is there additional data you could use to expand on your findings?***
 
 In shaping the trajectory of my project and harnessing the data, it appears that the existing dataset adequately aligns with the project's goals. My primary objective was to leverage the simplicity of happiness report data, utilizing happiness ratings as a metric to discern the most favorable countries for business endeavors based on their happiness levels. While contemplating potential supplementary data, considerations leaned toward factors such as crime rates and unemployment rates, which inherently fall within the economic realm. However, these facets are comprehensively covered under the broader economic section, providing a holistic overview. The meticulous curation of happiness data, coupled with the prospect of incorporating economic indicators, ensures a robust foundation for the project's analytical depth and strategic insights.
-
-
-
-
-
-
-
-
