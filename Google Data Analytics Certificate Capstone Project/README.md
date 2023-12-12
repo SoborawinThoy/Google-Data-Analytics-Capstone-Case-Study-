@@ -67,7 +67,7 @@ To start, I imported the dataset into Microsoft Excel and begnin with the cleani
    11. Two seperate Pivot tables was created to get the "Top 10 Happiest countries" and "Top 10 Unhappiest Countries", each tables includes Average of Happiness Score, Average of Economy (GDP per Capita), Average of Government Corruption and Average of Freedom
    12. Using both Pivot tables, a Dashboard is created in a new tab linked with slicers for "Year", "Overall Rank" and "Country Corruption"
 
-       <a href="Google Data Analytics Certificate Capstone Project/Capstone Project Dashboard.xlsx">Click here to View the Excel Dashboard</a>   
+       <a href="Capstone Project Dashboard.xlsx">Click here to View the Excel Dashboard</a>   
 
    13. To narrow down the list and to find the Best countries and Worst countries, the dataset is then taken into SQL
 
@@ -154,7 +154,7 @@ The data resulting from these two analyses was exported to Excel, facilitating a
    information, the goal is to enable individuals to initiate their preliminary research on Google, empowering them to gather 
    essential insights before making informed decisions about potential business ventures.
   
-   <a href="Google Data Analytics Certificate Capstone Project/Conclusion.pptx">Click here to View the PowerPoint</a>
+   <a href="Conclusion.pptx">Click here to View the PowerPoint</a>
 
 ## ACT:
 
